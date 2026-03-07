@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import WorkCard from '../components/WorkCard';
 
 const GaleriKarya = () => {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
 
-  // Data dummy untuk karya-karya
   const works = [
     {
       id: 1,
@@ -65,6 +65,10 @@ const GaleriKarya = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Head>
+        <title>Galeri Karya - HMTI</title>
+      </Head>
+
       <Navbar currentPath="/galeri" />
       
       {/* Header Section */}
