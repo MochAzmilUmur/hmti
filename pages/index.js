@@ -5,7 +5,14 @@ function Home() {
   return (
     <div className="App">
       <Head>
-        <title>HMTI</title>
+        <title>HMTI Polteksi - Himpunan Mahasiswa Teknologi Informasi</title>
+        <meta 
+          name="description" 
+          content="Website resmi Himpunan Mahasiswa Teknologi Informasi (HMTI) Polteksi. Dapatkan informasi terbaru seputar kegiatan, galeri karya, dan program studi IT di Polteksi." 
+        />
+        <meta name="keywords" content="hmti polteksi, teknologi informasi polteksi, himpunan mahasiswa IT, polteksi" />
+        <meta property="og:title" content="HMTI Polteksi - Teknologi Informasi" />
+        <meta property="og:description" content="Portal resmi mahasiswa Teknologi Informasi Polteksi." />
       </Head>
       
       <Navbar currentPath="/" />
@@ -156,6 +163,134 @@ Dengan visi menjadi program studi unggulan, HMTI Polteksi berkomitmen untuk meng
             </div>
           </div>
         </section>
+
+        {/* Lambang Himpunan Mahasiswa Teknologi Informasi */}
+        <section id="lambang" className="py-16 md:py-24 bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6"> 
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:rounded">
+              Lambang HMTI
+            </h2>
+            
+            <div className="flex flex-col md:flex-row gap-10 items-start">
+              
+              {/* Bagian Kiri: Gambar Lambang */}
+              <div className="w-full md:w-1/2 flex justify-center">
+                <figure className="relative w-full max-w-md h-auto rounded-xl shadow-lg">
+                  <img 
+                    src="/assets/HMTI.webp" 
+                    alt="Lambang Teknologi Informasi" 
+                    className="w-full h-full object-cover"
+                  />
+                  <figcaption className="mt-4 text-center text-gray-600">
+                    Lambang HMTI Polteksi
+                  </figcaption>
+                </figure>
+              </div>
+              
+              {/* Bagian Kanan: Penjelasan */}
+              <div className="w-full md:w-1/2">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+                  Makna Dan arti Lambang
+                </h3>
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="bg-blue-100 p-3 rounded-full mr-4">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M51314 4L19-7"></path>
+                      </svg>
+                    </div>
+                    {/* Kontainer List Penjelasan */}
+          <div className="space-y-8">
+                      {/* 1. Bunga Teratai Merah */}
+          <div className="flex items-start group">
+            <div className="flex-shrink-0 bg-red-50 p-4 rounded-2xl mr-5 group-hover:bg-red-500 transition-colors duration-300 shadow-sm">
+              <svg className="w-7 h-7 text-red-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Ikon Sparkles/Api/Bunga */}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">Bunga Teratai Merah yang Mekar</h4>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                Bunga teratai melambangkan kemurnian, pencerahan, dan kelahiran kembali. Warna merah mewakili semangat, kekuatan, dan tekad. Teratai mekar adalah simbol perkembangan yang sejalan dengan visi misi HMTI untuk terus maju di bidang teknologi informasi.
+              </p>
+            </div>
+          </div>
+
+          {/* 2. Tiga Bintang */}
+          <div className="flex items-start group">
+            <div className="flex-shrink-0 bg-yellow-50 p-4 rounded-2xl mr-5 group-hover:bg-yellow-400 transition-colors duration-300 shadow-sm">
+              <svg className="w-7 h-7 text-yellow-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Ikon Bintang */}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors">Tiga Bintang</h4>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                Melambangkan cita-cita tinggi, prestasi, dan kualitas unggul. Mewakili tiga pilar utama HMTI (pendidikan, pengabdian, penelitian) serta tiga tahap perkembangan mahasiswa: belajar, berkarya, dan berkontribusi.
+              </p>
+            </div>
+          </div>
+
+          {/* 3. Rangkaian Sirkuit */}
+          <div className="flex items-start group">
+            <div className="flex-shrink-0 bg-blue-50 p-4 rounded-2xl mr-5 group-hover:bg-blue-600 transition-colors duration-300 shadow-sm">
+              <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Ikon CPU Chip */}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Rangkaian Sirkuit & Chip</h4>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                Elemen inti jurusan Teknologi Informasi. Rangkaian sirkuit melambangkan keahlian, logika pemrograman, dan fokus HMTI pada inovasi teknologi serta keterampilan mumpuni di dunia digital.
+              </p>
+            </div>
+          </div>
+
+          {/* 4. Lingkaran Daun Emas */}
+          <div className="flex items-start group">
+            <div className="flex-shrink-0 bg-green-50 p-4 rounded-2xl mr-5 group-hover:bg-green-600 transition-colors duration-300 shadow-sm">
+              <svg className="w-7 h-7 text-green-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Ikon Check Badge / Laurel Stand-in */}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">Lingkaran Daun Emas</h4>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                Menandakan kesatuan, keabadian, dan prestasi. Melambangkan semangat kolektif dan tekad bulat mahasiswa Teknologi Informasi untuk terus maju mencapai prestasi setinggi mungkin.
+              </p>
+            </div>
+          </div>
+
+          {/* 5. Identitas HMTI */}
+          <div className="flex items-start group">
+            <div className="flex-shrink-0 bg-gray-100 p-4 rounded-2xl mr-5 group-hover:bg-gray-800 transition-colors duration-300 shadow-sm">
+              <svg className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Ikon Bangunan/Kampus */}
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6M12 14l-9-5m9 5l9-5" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors"> Tulisan HMTI & Politeknik Semen Indonesia</h4>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                Identitas mutlak organisasi dan institusi pendidikan. Penegasan nama ini menunjukkan kebanggaan yang mengakar kuat pada almamater kampus Politeknik Semen Indonesia.
+              </p>
+            </div>
+          </div>
+          </div>
+                  </div>
+                </div>
+              </div> 
+              
+            </div> 
+          </div> 
+        </section>
+          
 
         {/* Activities Section */}
         <section id="activities" className="py-16 md:py-24 bg-gray-50">
