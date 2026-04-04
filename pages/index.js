@@ -27,7 +27,7 @@ function Home() {
             Politeknik Semen Indonesia
           </h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90 animate-fade-in-delay-2">
-            Membentuk Generasi Digital Berjiwa pemimpin dan inovatif
+            Bersama, Berkarya, Bersinergi Membangun Teknologi
           </p>
         </div>
         
@@ -308,9 +308,9 @@ Dengan visi menjadi program studi unggulan, HMTI Polteksi berkomitmen untuk meng
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Workshop & Pelatihan</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">IT Class Discuss</h3>
                   <p className="text-gray-600 text-justify">
-                    Mengadakan workshop dan pelatihan rutin untuk meningkatkan keterampilan teknis mahasiswa dalam berbagai bidang teknologi informasi.
+                    Mengadakan kegiatan "IT Class Discuss" yang dihadiri oleh praktisi ahli di dunia industri Teknologi Informasi. 
                   </p>
                 </div>
               </article>
@@ -334,7 +334,7 @@ Dengan visi menjadi program studi unggulan, HMTI Polteksi berkomitmen untuk meng
               <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/assets/ti24.webp" 
+                    src="/assets/ti24prak.webp" 
                     alt="Praktikum & Lab" 
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -362,35 +362,18 @@ Dengan visi menjadi program studi unggulan, HMTI Polteksi berkomitmen untuk meng
                   </p>
                 </div>
               </article>
-
               <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/assets/HMTI.webp" 
-                    alt="Kompetisi & Lomba" 
+                    src="/assets/kunjunganpetro.webp" 
+                    alt="Kunjungan Industri" 
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Kompetisi & Lomba</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Kunjungan Industri</h3>
                   <p className="text-gray-600 text-justify">
-                    Memfasilitasi mahasiswa untuk mengikuti berbagai kompetisi dan lomba di bidang teknologi informasi tingkat regional maupun nasional.
-                  </p>
-                </div>
-              </article>
-
-              <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src="/assets/seminar.webp" 
-                    alt="Networking" 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Networking</h3>
-                  <p className="text-gray-600 text-justify">
-                    Membangun jaringan dengan industri, alumni, dan institusi lain untuk membuka peluang magang dan karir bagi mahasiswa.
+                    Membangun jaringan dengan industri dan institusi lain untuk membuka peluang magang dan karir bagi mahasiswa.
                   </p>
                 </div>
               </article>
@@ -410,15 +393,58 @@ Dengan visi menjadi program studi unggulan, HMTI Polteksi berkomitmen untuk meng
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Kontak</h3>
-              <p className="text-gray-400 text-sm mb-2">Email: hmti@polteksi.ac.id</p>
+              <h3 className="text-xl font-semibold mb-4">Informasi Dan Media sosial</h3>
+              <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/hmti_polteksi/&ved=2ahUKEwiY__vUgdSTAxVNyzgGHa9mHHMQFnoECBgQAQ&usg=AOvVaw0GVcT7XcEqANsHKb3oUnUR"
+              target='_blank'
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-pink-500 transition-colors duration-300">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                  </svg>
+                <span>hmti_polteksi</span>
+              </a>
+              <div className='mt-2'>
+              <a
+              href="mailto:hmtipolteksi@gmail.com"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              >
+              <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                  <span className="text-sm">hmtipolteksi@gmail.com</span>
+              </a>
+              </div>
+
               <p className="text-gray-400 text-sm">Telp: (0343) 123456</p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Alamat</h3>
               <p className="text-gray-400 text-sm">
                 Politeknik Semen Indonesia<br />
-                Jl. Veteran, Gresik, Jawa Timur
+                Jl. Kartini No.25 C, Kesemen, Sukorame, Kec. Gresik, Kabupaten Gresik, Jawa Timur
               </p>
             </div>
           </div>

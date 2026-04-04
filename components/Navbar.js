@@ -60,6 +60,16 @@ const Navbar = ({ currentPath }) => {
               Galeri Karya
             </Link>
           </li>
+          <li>
+            <a 
+              href="https://smb.polteksi.ac.id/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-medium transition-colors ${scrollPosition > 50 ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'}`}
+            >
+              Informasi Pendaftaran Mahasiswa
+            </a>
+          </li>
         </ul>
         
         {/* Mobile Menu Button */}
@@ -106,6 +116,17 @@ const Navbar = ({ currentPath }) => {
               >
                 Galeri Karya
               </Link>
+            </li>
+            <li>
+              <a 
+                href="https://smb.polteksi.ac.id/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 transition-colors text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Informasi Pendaftaran Mahasiswa
+              </a>
             </li>
           </ul>
         </div>
