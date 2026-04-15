@@ -87,7 +87,7 @@ Jika Anda menemukan bug atau memiliki ide fitur baru, silakan buat **Issue** bar
 ## 🔐 Keamanan
 
 Keamanan adalah prioritas kami. Jika Anda menemukan kerentanan, harap **JANGAN** membukanya di issue publik.
-Silakan baca Kebijakan [SECURITY.md] untuk instruksi pelaporan yang aman.
+Silakan baca Kebijakan [SECURITY.md](SECURITY.md) untuk instruksi pelaporan yang aman.
 
 ---
 

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/HMTI.png';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
-const Navbar = ({ currentPath = '/' }) => {
+const Navbar = ({ currentPath }) => {
+  const router = useRouter();
+  const activePath = currentPath || router.pathname;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,7 +27,7 @@ const Navbar = ({ currentPath = '/' }) => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
             <img 
-              src={logo} 
+              src="/assets/HMTI.webp" 
               alt="Logo HMTI" 
               className="h-12 w-12 object-contain"
             />
@@ -36,9 +38,9 @@ const Navbar = ({ currentPath = '/' }) => {
         <ul className="hidden md:flex space-x-8">
           <li>
             <Link 
-              to="/" 
+              href="/" 
               className={`font-medium transition-colors ${
-                currentPath === '/' 
+                activePath === '/' 
                   ? (scrollPosition > 50 ? 'text-blue-600' : 'text-blue-200') 
                   : (scrollPosition > 50 ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
               }`}
@@ -48,15 +50,25 @@ const Navbar = ({ currentPath = '/' }) => {
           </li>
           <li>
             <Link 
-              to="/galeri" 
+              href="/galeri" 
               className={`font-medium transition-colors ${
-                currentPath === '/galeri' 
+                activePath === '/galeri' 
                   ? (scrollPosition > 50 ? 'text-blue-600' : 'text-blue-200') 
                   : (scrollPosition > 50 ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
               }`}
             >
               Galeri Karya
             </Link>
+          </li>
+          <li>
+            <a 
+              href="https://smb.polteksi.ac.id/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-medium transition-colors ${scrollPosition > 50 ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'}`}
+            >
+              Informasi Pendaftaran Mahasiswa
+            </a>
           </li>
         </ul>
         
@@ -81,9 +93,9 @@ const Navbar = ({ currentPath = '/' }) => {
           <ul className="space-y-3">
             <li>
               <Link 
-                to="/" 
+                href="/" 
                 className={`block py-2 transition-colors ${
-                  currentPath === '/' 
+                  activePath === '/' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
@@ -94,9 +106,9 @@ const Navbar = ({ currentPath = '/' }) => {
             </li>
             <li>
               <Link 
-                to="/galeri" 
+                href="/galeri" 
                 className={`block py-2 transition-colors ${
-                  currentPath === '/galeri' 
+                  activePath === '/galeri' 
                     ? 'text-blue-600 font-semibold' 
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
@@ -104,6 +116,17 @@ const Navbar = ({ currentPath = '/' }) => {
               >
                 Galeri Karya
               </Link>
+            </li>
+            <li>
+              <a 
+                href="https://smb.polteksi.ac.id/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 transition-colors text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Informasi Pendaftaran Mahasiswa
+              </a>
             </li>
           </ul>
         </div>
