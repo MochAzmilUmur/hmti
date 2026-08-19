@@ -74,15 +74,15 @@ export default function Sidebar({ onClose, session }) {
   };
 
   return (
-    <aside className="flex flex-col h-full bg-gray-900 text-white w-64">
+    <aside className="flex flex-col h-full bg-blue-200 text-white w-64">
       {/* Logo */}
       <div className="flex items-center gap-3 px-6 py-5 border-b border-gray-700">
-        <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center overflow-hidden flex-shrink-0">
+        <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
           <Image src="/assets/HMTI.webp" alt="HMTI" width={32} height={32} className="object-contain" />
         </div>
         <div>
-          <p className="font-bold text-sm leading-tight">HMTI Polteksi</p>
-          <p className="text-xs text-gray-400">Admin Panel</p>
+          <p className="font-bold text-sm leading-tight text-blue-500">HMTI Polteksi</p>
+          <p className="text-xs text-gray-700">Admin Panel</p>
         </div>
         {onClose && (
           <button onClick={onClose} className="ml-auto text-gray-400 hover:text-white md:hidden">
@@ -100,7 +100,7 @@ export default function Sidebar({ onClose, session }) {
           if (visibleItems.length === 0) return null;
           return (
           <div key={group.label}>
-            <p className="px-3 mb-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">{group.label}</p>
+            <p className="px-3 mb-1 text-xs font-semibold text-gray-900 uppercase tracking-wider">{group.label}</p>
             <div className="space-y-0.5">
               {visibleItems.map((item) => {
                 const isActive = item.href === '/admin'
@@ -112,7 +112,7 @@ export default function Sidebar({ onClose, session }) {
                     href={item.href}
                     onClick={onClose}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-blue-600 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'
+                      isActive ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
                     {item.icon}
@@ -130,7 +130,7 @@ export default function Sidebar({ onClose, session }) {
       <div className="px-3 py-4 border-t border-gray-700">
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:bg-red-600/20 hover:text-red-400 transition-colors"
+          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-red-600/20 hover:text-red-400 transition-colors"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
           Keluar
