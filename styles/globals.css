@@ -62,3 +62,12 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes scrollLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 1.5s ease-in-out infinite;
+}

@@ -1,11 +1,12 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 
-const Navbar = ({ currentPath }) => {
-  const router = useRouter();
-  const activePath = currentPath || router.pathname;
+const Navbar = () => {
+  const activePath = usePathname();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -23,7 +24,10 @@ const Navbar = ({ currentPath }) => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 50 ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 50 ? 'bg-white shadow-md py-2' : 'py-4'}`}>
+      {scrollPosition <= 50 && (
+        <div className="absolute inset-0 pointer-events-none -z-10" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.35) 0%, transparent 60%)' }} />
+      )}
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
             <img 

@@ -1,12 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-
-# testing
-/coverage
 
 # next.js
 /.next/
@@ -15,17 +10,30 @@
 # production
 /build
 
+# testing
+/coverage
+
+# env files — JANGAN pernah commit file ini
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# uploads — file yang diupload user
+/public/uploads/*
+!/public/uploads/.gitkeep
+
 # misc
 .DS_Store
 *.pem
+Thumbs.db
 
-# debug
+# debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# local env files
-.env*.local
+pnpm-debug.log*
 
 # vercel
 .vercel
@@ -33,3 +41,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor
+.vscode/
+.idea/
+*.swp
+*.swo
