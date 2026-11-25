@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getGaleriData } from '../../../lib/data/galeri';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Kelola Galeri - Admin HMTI' };
 
 export default async function AdminGaleriPage() {

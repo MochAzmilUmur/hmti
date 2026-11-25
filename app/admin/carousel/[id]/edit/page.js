@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getCarouselById } from '../../../../../lib/data/carousel';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit Slide - Admin HMTI' };
 
 const fields = [

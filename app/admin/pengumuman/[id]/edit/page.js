@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getPengumumanById } from '../../../../../lib/data/pengumuman';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit Pengumuman - Admin HMTI' };
 
 const fields = [

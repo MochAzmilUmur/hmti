@@ -1,7 +1,4 @@
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
-
-export const config = { api: { bodyParser: false } };
+import { createClient } from '@supabase/supabase-js';
 
 const MAX_SIZE = 2 * 1024 * 1024; // 2MB
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
@@ -22,14 +19,23 @@ export async function POST(request) {
     return Response.json({ message: 'Ukuran file melebihi 2MB' }, { status: 400 });
   }
 
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
 
   const ext = file.name.split('.').pop();
   const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-  const uploadPath = join(process.cwd(), 'public', 'uploads', filename);
+  const buffer = Buffer.from(await file.arrayBuffer());
 
-  await writeFile(uploadPath, buffer);
+  const { error } = await supabase.storage
+    .from('uploads')
+    .upload(filename, buffer, { contentType: file.type, cacheControl: '3600' });
 
-  return Response.json({ url: `/uploads/${filename}` });
+  if (error) {
+    return Response.json({ message: error.message }, { status: 500 });
+  }
+
+  const { data } = supabase.storage.from('uploads').getPublicUrl(filename);
+  return Response.json({ url: data.publicUrl });
 }

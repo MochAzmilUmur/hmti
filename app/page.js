@@ -9,6 +9,8 @@ import KegiatanSection from '../components/KegiatanSection';
 import PengumumanSection from '../components/PengumumanSection';
 import CarouselSection from '../components/CarouselSection';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const [presidents, kegiatan, pengumuman, tentangList, visimisiList, carouselList] = await Promise.all([
     getPresidentData(),

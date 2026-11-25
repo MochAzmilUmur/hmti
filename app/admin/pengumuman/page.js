@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getPengumumanData } from '../../../lib/data/pengumuman';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Kelola Pengumuman - Admin HMTI' };
 
 export default async function AdminPengumumanPage() {

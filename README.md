@@ -1,6 +1,6 @@
 # HMTI Web Application
 
-Repository resmi platform digital **HMTI** (Himpunan Mahasiswa Teknologi Informasi) Politeknik Semen Indonesia. Dibangun menggunakan **Next.js** dengan koneksi database **MySQL**.
+Repository resmi platform digital **HMTI** (Himpunan Mahasiswa Teknologi Informasi) Politeknik Semen Indonesia. Dibangun menggunakan **Next.js** dengan database **PostgreSQL (Supabase)** dan **Supabase Storage** untuk upload gambar.
 
 ---
 
@@ -12,7 +12,7 @@ Repository resmi platform digital **HMTI** (Himpunan Mahasiswa Teknologi Informa
 - [Instalasi & Penggunaan](#-instalasi--penggunaan)
 - [Struktur Proyek](#-struktur-proyek)
 - [Variabel Lingkungan](#-variabel-lingkungan)
-- [Akun Default](#-akun-default)
+- [Akun Admin](#-akun-admin)
 - [Kontribusi](#-kontribusi)
 - [Keamanan](#-keamanan)
 - [Lisensi](#-lisensi)
@@ -41,7 +41,8 @@ Aplikasi web resmi HMTI Polteksi sebagai pusat informasi dan administrasi organi
 | [Next.js 16](https://nextjs.org/) | Framework React dengan App Router |
 | [React 19](https://react.dev/) | Library UI |
 | [Tailwind CSS 3](https://tailwindcss.com/) | Utility-first CSS framework |
-| [MySQL 2](https://github.com/sidorares/node-mysql2) | Driver database MySQL |
+| [postgres.js](https://github.com/porsager/postgres) | Driver database PostgreSQL |
+| [Supabase](https://supabase.com/) | Database PostgreSQL & Storage |
 | [bcryptjs](https://github.com/dcodeIO/bcrypt.js) | Hash & verifikasi password |
 | [jose](https://github.com/panva/jose) | JWT untuk session autentikasi |
 
@@ -53,7 +54,7 @@ Pastikan sudah terinstal:
 
 - **Node.js** v18+ (LTS disarankan)
 - **npm** v9+
-- **MySQL** v8+
+- **Akun Supabase** (PostgreSQL + Storage)
 - **Git**
 
 ---
@@ -77,10 +78,12 @@ Pastikan sudah terinstal:
    ```
    Isi nilai yang sesuai di `.env.local` (lihat [Variabel Lingkungan](#-variabel-lingkungan)).
 
-4. **Setup Database**
-   ```bash
-   mysql -u root -p < schema.sql
-   ```
+4. **Setup Database & Storage**
+   - Isi `DATABASE_URL` dari Supabase (Project Settings → Database).
+   - Buat bucket Storage bernama `uploads` dan set sebagai **public**.
+   - Tabel dan seed data konten dibuat otomatis saat aplikasi pertama kali query
+     database (lihat `lib/db.js`). User admin dibuat manual lewat SQL (lihat
+     [Akun Admin](#-akun-admin)). `schema.sql` hanya referensi skema.
 
 5. **Jalankan Development Server**
    ```bash
@@ -111,7 +114,7 @@ hmti/
 │   └── ...             # Komponen publik
 ├── lib/
 │   ├── data/           # Fungsi query database
-│   ├── db.js           # Koneksi MySQL pool
+│   ├── db.js           # Koneksi PostgreSQL + auto-migration & seed
 │   └── session.js      # Helper JWT session
 ├── public/
 │   ├── assets/         # Aset statis
@@ -119,7 +122,7 @@ hmti/
 ├── styles/
 │   └── globals.css
 ├── proxy.js            # Route protection & auth middleware
-└── schema.sql          # Skema & seed data database
+└── schema.sql          # Skema referensi PostgreSQL
 ```
 
 ---
@@ -129,12 +132,12 @@ hmti/
 Buat file `.env.local` di root proyek:
 
 ```env
-# Database MySQL
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=hmti
+# Database PostgreSQL (Supabase)
+DATABASE_URL=postgresql://postgres.[ref]:[password]@aws-0-[region].pooler.supabase.com:6543/postgres
+
+# Supabase Storage
+NEXT_PUBLIC_SUPABASE_URL=https://[ref].supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
 # JWT Session — ganti dengan string acak yang panjang
 SESSION_SECRET=ganti-dengan-string-acak-yang-aman
@@ -144,16 +147,8 @@ SESSION_SECRET=ganti-dengan-string-acak-yang-aman
 
 ---
 
-## 👤 Akun Default
 
-Setelah menjalankan `schema.sql`, tersedia dua akun default (password: `admin123`):
 
-| Email | Role | Akses |
-|---|---|---|
-| `admin@hmti.ac.id` | Admin | Semua menu dashboard |
-| `editor@hmti.ac.id` | Editor | Semua menu kecuali Manage Users |
-
-> ⚠️ Segera ganti password setelah pertama kali login.
 
 ---
 

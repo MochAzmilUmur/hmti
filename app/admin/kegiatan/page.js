@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getKegiatanData } from '../../../lib/data/kegiatan';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Kelola Kegiatan - Admin HMTI' };
 
 export default async function AdminKegiatanPage() {
