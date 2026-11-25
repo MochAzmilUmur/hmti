@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getVisiMisiById } from '../../../../../lib/data/visimisi';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit Visi & Misi - Admin HMTI' };
 
 const fields = [

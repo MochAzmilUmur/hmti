@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getTentangById } from '../../../../../lib/data/tentang';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit Deskripsi - Admin HMTI' };
 
 const fields = [

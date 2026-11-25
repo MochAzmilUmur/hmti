@@ -1,6 +1,8 @@
 import { getGaleriData } from '../../lib/data/galeri';
 import GaleriClient from './GaleriClient';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Galeri Karya - HMTI',
   description: 'Galeri karya mahasiswa Teknologi Informasi Politeknik Semen Indonesia',

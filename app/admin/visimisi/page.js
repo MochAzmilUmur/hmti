@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getVisiMisiData } from '../../../lib/data/visimisi';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Visi & Misi - Admin HMTI' };
 
 export default async function AdminVisiMisiPage() {

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getPresidentById } from '../../../../../lib/data/president';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit President - Admin HMTI' };
 
 const fields = [

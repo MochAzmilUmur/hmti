@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { getPresidentData } from '../../../lib/data/president';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Kelola President - Admin HMTI' };
 
 export default async function AdminPresidentPage() {

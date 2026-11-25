@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getUserById } from '../../../../../lib/data/users';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit User - Admin HMTI' };
 
 const fields = [

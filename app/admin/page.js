@@ -4,6 +4,8 @@ import { getKegiatanData } from '../../lib/data/kegiatan';
 import { getPengumumanData } from '../../lib/data/pengumuman';
 import { getPresidentData } from '../../lib/data/president';
 
+export const dynamic = 'force-dynamic';
+
 const quickLinks = [
   { label: 'Tambah Karya', href: '/admin/galeri/tambah' },
   { label: 'Kelola Kegiatan', href: '/admin/kegiatan' },

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getKegiatanById } from '../../../../../lib/data/kegiatan';
 import AdminForm from '../../../../../components/admin/AdminForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit Kegiatan - Admin HMTI' };
 
 const fields = [

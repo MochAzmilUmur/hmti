@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getTentangData } from '../../../lib/data/tentang';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Deskripsi HMTI - Admin HMTI' };
 
 export default async function AdminTentangPage() {

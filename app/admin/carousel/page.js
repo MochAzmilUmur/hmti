@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getCarouselData } from '../../../lib/data/carousel';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Carousel - Admin HMTI' };
 
 export default async function AdminCarouselPage() {

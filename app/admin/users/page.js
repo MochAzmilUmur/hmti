@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getUsersData } from '../../../lib/data/users';
 import DeleteButton from '../../../components/admin/DeleteButton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Manage User - Admin HMTI' };
 
 export default async function AdminUsersPage() {

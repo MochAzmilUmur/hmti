@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getGaleriById } from '../../../../../lib/data/galeri';
 import GaleriForm from '../../../../../components/admin/GaleriForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = { title: 'Edit Karya - Admin HMTI' };
 
 export default async function EditGaleriPage({ params }) {
